@@ -1,6 +1,6 @@
 # 📂 Custom File Handler
 
-This project demonstrates the creation of a custom Python object for file handling, with support for file reading via generators, operator overloading, decorators, inheritance, and automated testing using `pytest`.
+This project demonstrates the creation of a custom Python object for file handling, with support for file reading via generators, operator overloading, decorators, inheritance, and automated testing using pytest.
 
 ---
 
@@ -8,7 +8,7 @@ This project demonstrates the creation of a custom Python object for file handli
 
 - Custom file object with getter/setter validation
 - File reading using Python generators
-- Operator overloading with `+` to concatenate files
+- Operator overloading with + to concatenate files
 - Custom ANSI-colored string representation via decorators
 - Inheritance with extended functionality in a subclass
 - Support for concatenating multiple files

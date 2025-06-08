@@ -20,6 +20,7 @@ def colour_text(colour: str):
     Returns:
         function: Wrapped function that outputs colored text.
     """
+
     def decorator(func):
         def wrapper(*args, **kwargs):
             result = func(*args, **kwargs)
@@ -36,6 +37,7 @@ class CustomFile:
     A custom object to represent and operate on .txt files.
     Provides file validation, reading via a generator, and file combination.
     """
+
     def __init__(self, filepath):
         """
         Initialize CustomFile instance and validate the file.
@@ -123,6 +125,7 @@ class AdvancedFile(CustomFile):
     An advanced subclass of CustomFile with additional functionality.
     Overrides __str__ and adds support for concatenating many files.
     """
+
     @colour_text("blue")
     def __str__(self):
         """

@@ -38,11 +38,8 @@ def test_nonexistent_file():
 def test_add_operator(txt_file, another_txt_file, tmp_path):
     cf1 = CustomFile(txt_file)
     cf2 = CustomFile(another_txt_file)
-
     temp_output = tmp_path / "safe_combined.txt"
-
-    combined = cf1.__add__(cf2, str(temp_output))  # manual call with temp file
-
+    combined = cf1.__add__(cf2, str(temp_output))
     assert os.path.exists(combined.filepath)
     content = list(combined.read_file())
     assert "Hello" in content[0]
@@ -60,11 +57,8 @@ def test_str_decorator(capsys, txt_file):
 def test_concat_many_files(txt_file, another_txt_file, tmp_path):
     af1 = AdvancedFile(txt_file)
     af2 = AdvancedFile(another_txt_file)
-
     temp_output = tmp_path / "temp_combined_many.txt"
-
     combined = AdvancedFile.concat_many_files(af1, af2, output_path=str(temp_output))
-
     assert os.path.exists(combined.filepath)
     content = list(combined.read_file())
     assert "Hello" in content[0]

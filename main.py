@@ -74,13 +74,13 @@ class AdvancedFile(CustomFile):
         return f"AdvancedFile: (path='{self.filepath}')"
 
     @classmethod
-    def concat_many_files(cls, *files):
-        output_file = 'multi_combined_files.txt'
-        with open(output_file, 'w') as out:
+    def concat_many_files(cls, *files, output_path='multi_combined_files.txt'):
+        for f in files:
+            if not isinstance(f, CustomFile):
+                raise TypeError(f"Expected CustomFile, got {type(f).__name__}")
+        with open(output_path, 'w') as out:
             for f in files:
-                if not isinstance(f, CustomFile):
-                    raise TypeError(f"Expected CustomFile, got {type(f).__name__}")
                 for line in f.read_file():
                     out.write(line + '\n')
 
-        return cls(output_file)
+        return cls(output_path)

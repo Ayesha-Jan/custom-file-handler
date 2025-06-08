@@ -39,14 +39,11 @@ def test_add_operator(txt_file, another_txt_file, tmp_path):
     cf1 = CustomFile(txt_file)
     cf2 = CustomFile(another_txt_file)
 
-    # Create a temporary file path inside tmp_path
-    output_path = tmp_path / "combined.txt"
+    temp_output = tmp_path / "safe_combined.txt"
 
-    # Use __add__ manually and pass the temp path
-    combined = cf1.__add__(cf2, str(output_path))
+    combined = cf1.__add__(cf2, str(temp_output))  # manual call with temp file
 
     assert os.path.exists(combined.filepath)
-
     content = list(combined.read_file())
     assert "Hello" in content[0]
     assert "File" in content[-1]
@@ -60,10 +57,14 @@ def test_str_decorator(capsys, txt_file):
     assert '\033[95m' in output
 
 
-def test_concat_many_files(txt_file, another_txt_file):
-    cf1 = AdvancedFile(txt_file)
-    cf2 = AdvancedFile(another_txt_file)
-    combined = cf1 + cf2
+def test_concat_many_files(txt_file, another_txt_file, tmp_path):
+    af1 = AdvancedFile(txt_file)
+    af2 = AdvancedFile(another_txt_file)
+
+    temp_output = tmp_path / "temp_combined_many.txt"
+
+    combined = AdvancedFile.concat_many_files(af1, af2, output_path=str(temp_output))
+
     assert os.path.exists(combined.filepath)
     content = list(combined.read_file())
     assert "Hello" in content[0]

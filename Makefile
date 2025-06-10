@@ -4,10 +4,10 @@ test:
 	pytest
 
 lint:
-	flake8 main.py test_main.py
+	flake8 file_handler.py test_file_handler.py dice_simulation.py test_dice_simulation.py
 
 format:
-	black main.py test_main.py
+	black file_handler.py test_file_handler.py dice_simulation.py test_dice_simulation.py
 
 clean:
 	find . -type f -name '*.pyc' -delete

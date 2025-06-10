@@ -1,6 +1,6 @@
 import pytest
 import os
-from main import CustomFile, AdvancedFile
+from file_handler import CustomFile, AdvancedFile
 
 
 @pytest.fixture

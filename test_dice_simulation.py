@@ -38,4 +38,3 @@ def test_multiple_roll_sizes(n):
     with patch("matplotlib.pyplot.show"):
         results = simulate_and_plot(n)
     assert len(results) == n
-

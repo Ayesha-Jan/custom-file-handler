@@ -1,6 +1,6 @@
 import pytest
 import os
-from file_handler import CustomFile, AdvancedFile
+from file_handler import CustomFile, ExtendedFile
 
 
 @pytest.fixture
@@ -34,10 +34,9 @@ def test_read_file(txt_file):
 
 def test_invalid_extension(tmp_path):
     """
-    Test that a ValueError is raised when using a non-.txt file.
+    Test that a ValueError is raised when using a non .txt file.
     """
     file = tmp_path / "invalid.pdf"
-    file.write_text("Should Fail")
     with pytest.raises(ValueError):
         CustomFile(str(file))
 
@@ -56,7 +55,7 @@ def test_add_operator(txt_file, another_txt_file, tmp_path):
     """
     cf1 = CustomFile(txt_file)
     cf2 = CustomFile(another_txt_file)
-    temp_output = tmp_path / "safe_combined.txt"
+    temp_output = tmp_path / "temp_combined.txt"
     combined = cf1.__add__(cf2, str(temp_output))
     assert os.path.exists(combined.filepath)
     content = list(combined.read_file())
@@ -79,10 +78,10 @@ def test_concat_many_files(txt_file, another_txt_file, tmp_path):
     """
     Test that multiple AdvancedFile instances can be concatenated correctly.
     """
-    af1 = AdvancedFile(txt_file)
-    af2 = AdvancedFile(another_txt_file)
+    af1 = ExtendedFile(txt_file)
+    af2 = ExtendedFile(another_txt_file)
     temp_output = tmp_path / "temp_combined_many.txt"
-    combined = AdvancedFile.concat_many_files(af1, af2, output_path=str(temp_output))
+    combined = ExtendedFile.concat_many_files(af1, af2, output_path=str(temp_output))
     assert os.path.exists(combined.filepath)
     content = list(combined.read_file())
     assert "Hello" in content[0]
@@ -95,4 +94,4 @@ def test_concat_invalid_type(txt_file):
     """
     cf = CustomFile(txt_file)
     with pytest.raises(TypeError):
-        AdvancedFile.concat_many_files(cf, "a string")
+        ExtendedFile.concat_many_files(cf, "a string")

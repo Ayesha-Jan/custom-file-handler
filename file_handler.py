@@ -7,7 +7,6 @@ ANSI_COLOURS = {
     "yellow": "\033[93m",
     "blue": "\033[94m",
     "magenta": "\033[95m",
-    "cyan": "\033[96m",
     "reset": "\033[0m",
 }
 
@@ -16,7 +15,7 @@ def colour_text(colour: str):
     """
     Decorator to wrap the return value of a function with an ANSI color code.
     Args:
-        colour (str): The color name to apply (e.g., "red", "blue").
+        colour (str): The color name to apply.
     Returns:
         function: Wrapped function that outputs colored text.
     """
@@ -120,7 +119,7 @@ class CustomFile:
         return CustomFile(output_path)
 
 
-class AdvancedFile(CustomFile):
+class ExtendedFile(CustomFile):
     """
     An advanced subclass of CustomFile with additional functionality.
     Overrides __str__ and adds support for concatenating many files.

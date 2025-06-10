@@ -6,6 +6,7 @@ def plot_distribution(func):
     """
     Decorator to plot the frequency distribution of dice rolls.
     """
+
     def wrapper(*args, **kwargs):
         results = func(*args, **kwargs)
         rolls = list(results)
@@ -17,7 +18,7 @@ def plot_distribution(func):
         plt.xlabel("Dice Face")
         plt.ylabel("Frequency")
         plt.title(f"Distribution for {len(rolls):,} Rolls (Seed=40)")
-        plt.grid(True, axis='y', linestyle='--', alpha=0.5)
+        plt.grid(True, axis="y", linestyle="--", alpha=0.5)
         plt.tight_layout()
         plt.show()
 

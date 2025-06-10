@@ -1,7 +1,10 @@
 import pytest
 import random
 from unittest.mock import patch
-from dice_simulation import dice_rolls, simulate_and_plot  # Replace with actual module name
+from dice_simulation import (
+    dice_rolls,
+    simulate_and_plot,
+)  # Replace with actual module name
 
 
 def test_dice_rolls_values():

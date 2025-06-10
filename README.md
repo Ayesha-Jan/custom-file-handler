@@ -1,3 +1,9 @@
+# 📂 Custom File Handler & 🎲 Dice Roll Simulator
+
+This repository contains two Python projects demonstrating different features:
+
+---
+
 # 📂 Custom File Handler
 
 This project demonstrates the creation of a custom Python object for file handling, with support for file reading via generators, operator overloading, decorators, inheritance, and automated testing using pytest.
@@ -12,22 +18,39 @@ This project demonstrates the creation of a custom Python object for file handli
 - Custom ANSI-colored string representation via decorators
 - Inheritance with extended functionality in a subclass
 - Support for concatenating multiple files
-- Unit testing using `pytest`
-- Linting and formatting with `flake8` and `black`
+- Unit testing using pytest
+- Linting and formatting with flake8 and black
 - GitHub Actions CI for automated tests and formatting
 - Makefile for easy development workflow
 
 ---
 
+# 🎲 Dice Roll Simulator
+
+Simulates dice rolls and plots their frequency distribution using matplotlib. Demonstrates generators, decorators, plotting, and automated testing.
+
+---
+
+## Features
+
+- Generator function for dice rolls
+- Decorator to plot roll frequency distributions
+- Matplotlib visualization
+- Automated tests with pytest
+- Linting and formatting with flake8 and black
+- Makefile commands integrated with main project
+
 ## Project Structure
 
 <pre> custom-file-handler/ 
-  ├── main.py # Core logic
-  ├── test_main.py # Unit tests using pytest
-  ├── requirements.txt # Python dependencies
-  ├── Makefile # Developer commands
-  ├── .github/workflows/
-  │   └── python_app.yml # GitHub Actions workflow </pre>
+  ├── file_handler.py          # Core logic
+  ├── test_file_handler.py     # Unit tests using pytest
+  ├── dice_simulation.py       # Core simulation and plotting code
+  ├── test_dice_simulation.py  # Unit tests using pytest
+  ├── requirements.txt         # Python dependencies
+  ├── Makefile                 # Developer commands
+  ├── github/workflows/
+  │   └── python_app.yml       # GitHub Actions workflow </pre>
 
 ---
 
@@ -41,10 +64,6 @@ This project demonstrates the creation of a custom Python object for file handli
     
     git clone https://github.com/Ayesha-Jan/custom-file-handler.git
     cd custom-file-handler
-
-### Run the program
-
-Open and run main.py
 
 ---
 

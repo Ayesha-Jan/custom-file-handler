@@ -2,7 +2,7 @@ import random
 import matplotlib.pyplot as plt
 
 
-def plot_distribution(func):
+def plot_graph(func):
     """
     Decorator to plot the frequency distribution of dice rolls.
     """
@@ -27,7 +27,8 @@ def plot_distribution(func):
     return wrapper
 
 
-def dice_rolls(n):
+@plot_graph
+def dice_roll(n):
     """
     Generator function to yield n random dice rolls.
     """
@@ -35,16 +36,8 @@ def dice_rolls(n):
         yield random.randint(1, 6)
 
 
-@plot_distribution
-def simulate_and_plot(n):
-    """
-    Simulate dice rolls and plot the result.
-    """
-    return dice_rolls(n)
-
-
 if __name__ == "__main__":
     random.seed(40)
 
     for n in [10, 100, 1000, 10000, 100000, 500000]:
-        simulate_and_plot(n)
+        dice_roll(n)

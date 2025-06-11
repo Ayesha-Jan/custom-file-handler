@@ -1,4 +1,8 @@
-.PHONY: test lint format clean
+.PHONY: install test lint format clean
+
+install:
+	pip install --upgrade pip
+	if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
 test:
 	pytest

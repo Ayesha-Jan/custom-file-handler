@@ -8,8 +8,8 @@ def plot_graph(func):
     """
 
     def wrapper(*args, **kwargs):
-        results = func(*args, **kwargs)
-        rolls = list(results)
+        result = func(*args, **kwargs)
+        rolls = list(result)
         counts = [rolls.count(i) for i in range(1, 7)]
 
         plt.figure(figsize=(8, 4))

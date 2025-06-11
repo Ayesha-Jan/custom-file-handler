@@ -18,7 +18,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-
+    - name: Install matplotlib unless on PyPy
+      if: startsWith(matrix.python-version, 'pypy') == false
+      run: pip install matplotlib
+      
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
       with:

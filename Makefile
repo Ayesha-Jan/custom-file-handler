@@ -1,4 +1,4 @@
-.PHONY: install test lint format clean
+.PHONY: test lint format clean
 
 test:
 	pytest

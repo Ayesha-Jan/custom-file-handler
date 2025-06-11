@@ -12,4 +12,3 @@ format:
 clean:
 	find . -type f -name '*.pyc' -delete
 	find . -type d -name '__pycache__' -exec rm -r {} +
-	rm -f combined_files.txt multi_combined_files.txt

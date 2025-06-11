@@ -8,8 +8,7 @@ test:
 	pytest
 
 lint:
-	flake8 file_handler.py test_file_handler.py dice_simulation.py test_dice_simulation.py
-	flake8 . --max-line-length=120
+	flake8 file_handler.py test_file_handler.py dice_simulation.py test_dice_simulation.py --max-line-length=120
 
 format:
 	black file_handler.py test_file_handler.py dice_simulation.py test_dice_simulation.py

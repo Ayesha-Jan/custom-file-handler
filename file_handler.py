@@ -62,7 +62,7 @@ class CustomFile:
             raise ValueError("The given filepath is not a txt file")
 
         if not os.path.exists(new_filepath):
-            raise FileNotFoundError(f"The file does not exist.")
+            raise FileNotFoundError("The file does not exist.")
 
         self._filepath = new_filepath
 

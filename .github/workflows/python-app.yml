@@ -32,13 +32,14 @@ jobs:
       run: make lint
 
     - name: Auto-format code with Black and push
+      if: matrix.python-version == '3.12'
       run: |
         make format
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add .
         if ! git diff --cached --quiet; then
-          git commit -m "Auto-format code with Black"
+          git commit -m "Auto-format code with Black [skip ci]"
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main

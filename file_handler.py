@@ -155,3 +155,4 @@ class ExtendedFile(CustomFile):
                     out.write(line + "\n")
 
         return cls(output_path)
+

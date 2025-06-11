@@ -67,7 +67,7 @@ def test_add_operator(txt_file, txt_file2, tmp_path):
     cf2 = CustomFile(txt_file2)
     temp_output = tmp_path / "temp_combined.txt"
     combined = cf1 + cf2
-    os.replace('combined_files.txt', temp_output)
+    os.replace("combined_files.txt", temp_output)
     combined = CustomFile(str(temp_output))
     assert os.path.exists(combined.filepath)
     content = list(combined.read_file())
@@ -94,7 +94,9 @@ def test_concat_many_files(txt_file, txt_file2, txt_file3, tmp_path):
     ef2 = ExtendedFile(txt_file2)
     ef3 = ExtendedFile(txt_file3)
     temp_output = tmp_path / "temp_combined_many.txt"
-    combined = ExtendedFile.concat_many_files(ef1, ef2, ef3, output_path=str(temp_output))
+    combined = ExtendedFile.concat_many_files(
+        ef1, ef2, ef3, output_path=str(temp_output)
+    )
     assert os.path.exists(combined.filepath)
     content = list(combined.read_file())
     assert "Hello" in content[0]

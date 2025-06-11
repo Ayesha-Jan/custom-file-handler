@@ -58,7 +58,7 @@ Simulates dice rolls and plots their frequency distribution using matplotlib. De
 
 ### Prerequisites
 
-- Python 3.7+
+- Python 3.9+
 
 ### Clone the Repository 
     

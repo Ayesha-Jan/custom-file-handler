@@ -91,6 +91,6 @@ Then run:
 
 ## Author
 
-Developed by: Ayesha A. Jan
-Email: Ayesha.Jan@stud.srh-campus-berlin.de
-🎓 BST Programming II Project – 2025 
+Developed by: Ayesha A. Jan  
+Email: Ayesha.Jan@stud.srh-campus-berlin.de  
+🎓 BST Programming Project – 2025
